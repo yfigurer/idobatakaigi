@@ -5,7 +5,7 @@ import MessageInputField from './MessageInputField';
 import MessageList from './MessageList';
 
 
-const ChatField = styled('div')({
+const MessageField = styled('div')({
     display: 'grid',
     height: '100vh',
     gridTemplateRows: '1fr auto',
@@ -14,10 +14,10 @@ const ChatField = styled('div')({
 const Main = ({name}) => {
     // const classes = useStyles();
     return [
-    <ChatField >
+    <MessageField >
         <MessageList />
         <MessageInputField name={name}/>
-    </ChatField>
+    </MessageField>
     ];
 };
 

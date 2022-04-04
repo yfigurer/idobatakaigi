@@ -1,7 +1,10 @@
 import React from 'react';
+import { styled } from '@mui/material/styles';
 
-const MessageList = () => {
-    return <div>MessageList</div>
+const MessageList = styled('div')({
+    gridRow: '1',
+});
+
+export default function StyledComponents() {
+    return <MessageList>MessageList</MessageList>;
 }
-
-export default MessageList;
