@@ -11,6 +11,5 @@ export default () => {
     return <SignIn setName={setName} />;
   }else{
     return <Main name={name}/>
-  }
-  
+  } 
 };
