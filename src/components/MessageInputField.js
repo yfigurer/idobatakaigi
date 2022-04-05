@@ -4,6 +4,7 @@ import { Grid, Avatar } from '@mui/material';
 
 import { gravatarPath} from '../gravatar'
 import MessageField from './MessageField'
+import MessageSubmitButton from './MessageSubmitButton'
 
 const MessageInputField = styled('div')({
     gridRow: '2',
@@ -24,7 +25,7 @@ export default function StyledComponents({name}) {
                     <MessageField name={name} setText={setText} text={text} />
                 </Grid>
                 <Grid item xs={1}>
-                    ボタン
+                    <MessageSubmitButton name={name} setText={setText} text={text}/>
                 </Grid>
             </Grid>
         </MessageInputField>
