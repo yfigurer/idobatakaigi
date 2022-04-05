@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { styled } from '@mui/material/styles';
 import { Grid, Avatar } from '@mui/material';
 
@@ -12,6 +12,7 @@ const MessageInputField = styled('div')({
 });
 
 export default function StyledComponents({name}) {
+    const inputEl = useRef(null);
     const [text, setText] = useState('');
     const avatarPath = gravatarPath(name);
 
@@ -22,10 +23,10 @@ export default function StyledComponents({name}) {
                     <Avatar src={avatarPath}/>
                 </Grid>
                 <Grid item xs={10}>
-                    <MessageField name={name} setText={setText} text={text} />
+                    <MessageField inputEl={inputEl} name={name} setText={setText} text={text} />
                 </Grid>
                 <Grid item xs={1}>
-                    <MessageSubmitButton name={name} setText={setText} text={text}/>
+                    <MessageSubmitButton inputEl={inputEl} name={name} setText={setText} text={text}/>
                 </Grid>
             </Grid>
         </MessageInputField>
