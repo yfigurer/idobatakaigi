@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
-import { getDatabase, push, ref } from 'firebase/database';
+import { getDatabase, push, ref, query, limitToLast, orderByKey } from 'firebase/database';
 
-const{
+const {
   REACT_APP_FIREBASE_API_KEY,
   REACT_APP_FIREBASE_AUTH_DOMAIN,
   REACT_APP_FIREBASE_DATABASE_URL,
@@ -24,8 +24,15 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
-const messageRef = ref(database, 'messages');
 
-export const pushMessage = ({name, text}) => {
-    push(messageRef, {name, text});
+export const messageRef = ref(database, 'messages');
+
+// export const messageRef = query(
+//   ref(database, 'messages'),
+//   orderByKey(),
+//   limitToLast(3)
+// );
+
+export const pushMessage = ({ name, text }) => {
+  push(messageRef, { name, text });
 }
